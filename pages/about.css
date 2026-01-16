@@ -1,0 +1,423 @@
+.about {
+    height: 94.5dvh;
+    width: 100%;
+    border: none;
+    padding: 0;
+    display: flex;
+    position: sticky;
+    top: 0;
+    background: url("../public/9.png");
+    background-size: cover;
+    z-index: 0;
+}
+
+.about::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(8px);
+    z-index: 0;
+}
+
+.fadetrigger {
+    position: relative;
+}
+
+.leftdiv {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.rightdiv {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.profpic {
+    height: 48rem;
+    border-top-right-radius: 4rem;
+    border-bottom-left-radius: 4rem;
+    margin-right: -10rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(255, 245, 230, 0.4);
+}
+
+.imgcont {
+    position: relative;
+    width: 30rem;
+    height: 47rem;
+    padding: 1.5rem;
+    border: 3px solid #141414;
+    margin-top: -3rem;
+    margin-right: -3rem;
+    border-top-right-radius: 4rem;
+    border-bottom-left-radius: 4rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.aboutcard {
+    height: 35rem;
+    width: 50rem;
+    display: flex;
+    font-family: "fredoka";
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    word-spacing: .3rem;
+    letter-spacing: .1rem;
+    line-height: 1.7rem;
+    padding: 3rem;
+    margin-left: -13rem;
+    margin-bottom: 2rem;
+    color: #ffffff;
+    text-shadow: 0px 1px 2px rgba(44, 44, 44, 0.6);
+    border: 2px solid rgba(255, 245, 230, 0.4);
+    box-shadow: 0 20px 60px rgba(139, 69, 19, 0.2);
+    background-color: #0e0e0e;
+}
+
+.p2 {
+    margin-top: 4%;
+}
+
+.scroll {
+    color: #e2ba37;
+    margin-top: 20px;
+    text-decoration: underline;
+}
+
+.aboutcard div {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.aboutcard h1 {
+    text-align: center;
+    color: #e2ba37;
+    font-family: "dancing script";
+    font-size: 3rem;
+    margin-top: -6%;
+    margin-bottom: 7%;
+    text-decoration: underline;
+}
+
+.abouth1 {
+    margin-left: 20rem;
+    font-size: 6rem;
+    font-family: "lobster two";
+    margin-bottom: .5rem;
+    margin-top: -2rem;
+    color: #0a0a0a;
+    text-shadow: 2px 2px 8px rgba(255, 245, 230, 0.8);
+}
+
+#about {
+    overflow: hidden;
+}
+
+/* Tablet and smaller desktop screens */
+@media (max-width: 1400px) {
+    .profpic {
+        height: 40rem;
+        margin-right: -8rem;
+    }
+
+    .imgcont {
+        width: 26rem;
+        height: 39rem;
+    }
+
+    .aboutcard {
+        width: 42rem;
+        height: 32rem;
+        font-size: 1.15rem;
+        line-height: 1.6rem;
+        padding: 2.5rem;
+        margin-left: -10rem;
+    }
+
+    .aboutcard h1 {
+        font-size: 2.5rem;
+    }
+
+    .abouth1 {
+        font-size: 5rem;
+        margin-left: 15rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .profpic {
+        height: 36rem;
+        margin-right: -6rem;
+    }
+
+    .imgcont {
+        width: 22rem;
+        height: 35rem;
+        margin-top: -2rem;
+        margin-right: -2rem;
+    }
+
+    .aboutcard {
+        width: 38rem;
+        height: 30rem;
+        font-size: 1.1rem;
+        line-height: 1.5rem;
+        padding: 2rem;
+        margin-left: -8rem;
+    }
+
+    .aboutcard h1 {
+        font-size: 2.2rem;
+    }
+
+    .abouth1 {
+        font-size: 4.5rem;
+        margin-left: 12rem;
+    }
+}
+
+/* Tablet portrait */
+@media (max-width: 1024px) {
+    .about {
+        flex-direction: column;
+        height: auto;
+        min-height: 100dvh;
+        padding: 2rem 0;
+    }
+
+    .leftdiv,
+    .rightdiv {
+        width: 100%;
+    }
+
+    .leftdiv {
+        padding: 2rem 0;
+    }
+
+    .profpic {
+        height: 32rem;
+        margin-right: 0;
+        border-top-right-radius: 3rem;
+        border-bottom-left-radius: 3rem;
+    }
+
+    .imgcont {
+        width: 20rem;
+        height: 31rem;
+        margin: 0;
+        border-top-right-radius: 3rem;
+        border-bottom-left-radius: 3rem;
+    }
+
+    .rightdiv {
+        padding: 2rem 0;
+    }
+
+    .aboutcard {
+        width: 90%;
+        max-width: 40rem;
+        height: auto;
+        min-height: 28rem;
+        margin: 0 auto;
+        padding: 2.5rem 2rem;
+        font-size: 1.05rem;
+        line-height: 1.5rem;
+    }
+
+    .aboutcard h1 {
+        font-size: 2rem;
+        margin-bottom: 5%;
+    }
+
+    .abouth1 {
+        font-size: 4rem;
+        margin-left: 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    .rightcard {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Mobile landscape and small tablets */
+@media (max-width: 768px) {
+    .profpic {
+        height: 28rem;
+        border-top-right-radius: 2rem;
+        border-bottom-left-radius: 2rem;
+    }
+
+    .imgcont {
+        width: 18rem;
+        height: 27rem;
+        padding: 1rem;
+        border-top-right-radius: 2rem;
+        border-bottom-left-radius: 2rem;
+    }
+
+    .aboutcard {
+        width: 92%;
+        max-width: 35rem;
+        font-size: 1rem;
+        line-height: 1.45rem;
+        padding: 2rem 1.5rem;
+        word-spacing: .2rem;
+        letter-spacing: .05rem;
+    }
+
+    .aboutcard h1 {
+        font-size: 1.8rem;
+        margin-top: -3%;
+        margin-bottom: 4%;
+    }
+
+    .abouth1 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .p2 {
+        margin-top: 5%;
+    }
+
+    .scroll {
+        margin-top: 15px;
+        font-size: 0.95rem;
+    }
+}
+
+/* Mobile portrait */
+@media (max-width: 640px) {
+    .about {
+        padding: 1.5rem 0;
+    }
+
+    .profpic {
+        height: 24rem;
+        border-top-right-radius: 1.5rem;
+        border-bottom-left-radius: 1.5rem;
+    }
+
+    .imgcont {
+        width: 16rem;
+        height: 23rem;
+        padding: 0.8rem;
+        border-top-right-radius: 1.5rem;
+        border-bottom-left-radius: 1.5rem;
+        ;
+        border: 2px solid #141414;
+    }
+
+    .aboutcard {
+        width: 95%;
+        font-size: 0.95rem;
+        line-height: 1.4rem;
+        padding: 1.8rem 1.2rem;
+        border-radius: 1.2rem;
+    }
+
+    .aboutcard h1 {
+        font-size: 1.6rem;
+    }
+
+    .abouth1 {
+        font-size: 3rem;
+        margin-top: -1rem;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    .about {
+        padding: 1rem 0;
+    }
+
+    .profpic {
+        height: 20rem;
+        border-top-right-radius: 1.5rem;
+        border-bottom-left-radius: 1.5rem;
+    }
+
+    .imgcont {
+        width: 14rem;
+        height: 19rem;
+        padding: 0.6rem;
+        border-top-right-radius: 1.5rem;
+        border-bottom-left-radius: 1.5rem;
+    }
+
+    .aboutcard {
+        width: 95%;
+        font-size: 0.9rem;
+        line-height: 1.35rem;
+        padding: 1.5rem 1rem;
+        word-spacing: .15rem;
+    }
+
+    .aboutcard h1 {
+        font-size: 1.4rem;
+        margin-bottom: 3%;
+    }
+
+    .abouth1 {
+        font-size: 2.5rem;
+        margin-top: -0.5rem;
+    }
+
+    .p1,
+    .p2 {
+        font-size: 0.9rem;
+    }
+
+    .scroll {
+        font-size: 0.85rem;
+        margin-top: 12px;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 375px) {
+    .profpic {
+        height: 18rem;
+    }
+
+    .imgcont {
+        width: 12.5rem;
+        height: 17rem;
+        padding: 0.5rem;
+    }
+
+    .aboutcard {
+        font-size: 0.85rem;
+        line-height: 1.3rem;
+        padding: 1.3rem 0.9rem;
+    }
+
+    .aboutcard h1 {
+        font-size: 1.3rem;
+    }
+
+    .abouth1 {
+        font-size: 2.2rem;
+    }
+}

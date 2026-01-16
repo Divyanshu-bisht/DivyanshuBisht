@@ -1,0 +1,719 @@
+.circle-section {
+  height: 700vh;
+}
+
+/* sticky container */
+.sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  background: #0e0e0e;
+  overflow: hidden;
+}
+
+/* camera scene */
+.scene {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-origin: center center;
+  will-change: transform;
+  transition: filter 0.4s ease;
+}
+
+/* background */
+.bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("../public/crowd2.png");
+  background-size: cover;
+  background-position: center;
+  filter: blur(4px);
+  transform: scale(1.05);
+  z-index: 1;
+}
+
+.bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top,
+      rgba(0, 0, 0, 0.15),
+      rgba(0, 0, 0, 0.15));
+}
+
+.character-wrap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+/* character */
+.character {
+  position: absolute;
+  top: 25%;
+  left: 20%;
+  height: 35rem;
+  will-change: opacity, transform;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+/* text wrapper */
+.texts {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+}
+
+/* shared node style */
+.node {
+  position: absolute;
+  opacity: 0;
+  font-size: 1.4rem;
+  font-weight: 900;
+  max-width: 350px;
+  text-align: center;
+  color: #fdf0d5;
+  line-height: 1.4;
+}
+
+/* imperfect placements */
+.n1 {
+  top: 22%;
+  left: 4%;
+  font-family: "lobster two", serif;
+  text-shadow: 2px 2px 8px rgba(255, 241, 241, 0.726);
+  letter-spacing: .1rem;
+  font-weight: 500;
+  font-size: 1.90rem;
+}
+
+.n2 {
+  top: 3%;
+  right: 38%;
+  max-width: 440px;
+  font-family: "lora", serif;
+  font-size: 1.6rem;
+  color: #faedcd;
+  font-weight: 500;
+  text-shadow: 2px 2px 8px rgba(221, 221, 221, 0.726);
+}
+
+.n3 {
+  top: 18%;
+  right: 9%;
+  font-family: "story script", serif;
+  font-size: 1.8rem;
+  color: #fff3b0;
+  font-weight: 500;
+  text-shadow: 2px 2px 8px rgba(221, 221, 221, 0.726);
+}
+
+.n4 {
+  bottom: 30%;
+  right: 3%;
+  font-family: "story script", serif;
+  font-size: 1.6rem;
+  color: #fff3b0;
+  font-weight: 500;
+  text-shadow: 2px 2px 8px rgba(221, 221, 221, 0.726);
+}
+
+.n5 {
+  bottom: 4%;
+  left: 40%;
+  max-width: 380px;
+  font-family: "fredoka", serif;
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #fff3b0;
+  font-weight: 500;
+  text-shadow: 2px 2px 8px rgba(51, 51, 51, 0.726);
+}
+
+.n6 {
+  bottom: 20%;
+  left: 13%;
+  max-width: 330px;
+  font-family: "dancing script", serif;
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #fff3b0;
+  font-weight: 500;
+  text-shadow: 2px 2px 8px rgba(221, 221, 221, 0.726);
+}
+
+.fend {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3%;
+  overflow: hidden;
+}
+
+.fend::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../public/1.jpg") center / cover no-repeat;
+  filter: blur(6px);
+  transform: scale(1.05);
+  z-index: 0;
+}
+
+.fend p {
+  position: relative;
+  z-index: 1;
+  font-size: 5rem;
+  font-family: "story script";
+}
+
+#year1 nav {
+  border-bottom: 0;
+  background-color: rgb(20, 20, 20);
+  border-bottom: 4px solid black;
+}
+
+#year {
+  overflow-x: hidden;
+}
+
+.bottom-nav {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+
+/* ===============================================
+   RESPONSIVE DESIGN
+   =============================================== */
+
+/* Large Desktops */
+@media (max-width: 1400px) {
+  .character {
+    height: 25rem;
+    left: 22%;
+    top: 30%;
+  }
+
+  .node {
+    font-size: 1.3rem;
+    max-width: 320px;
+  }
+
+  .n1 {
+    font-size: 1.6rem;
+    left: 4%;
+    max-width: 350px;
+  }
+
+  .n2 {
+    font-size: 1.4rem;
+    max-width: 400px;
+    right: 36%;
+  }
+
+  .n3 {
+    font-size: 1.65rem;
+    right: 5%;
+  }
+
+  .n4 {
+    font-size: 1.5rem;
+    right: 3%;
+  }
+
+  .n5 {
+    font-size: 1.3rem;
+    max-width: 350px;
+    left: 40%;
+  }
+
+  .n6 {
+    font-size: 1.65rem;
+    max-width: 300px;
+    left: 12%;
+  }
+
+  .fend p {
+    font-size: 4rem;
+  }
+}
+
+/* Medium Desktops and Laptops */
+@media (max-width: 1200px) {
+  .character {
+    height: 28rem;
+    left: 15%;
+    top: 28%;
+  }
+
+  .node {
+    font-size: 1.2rem;
+    max-width: 280px;
+    line-height: 1.35;
+  }
+
+  .n1 {
+    font-size: 1.5rem;
+    left: 4%;
+    top: 20%;
+  }
+
+  .n2 {
+    font-size: 1.4rem;
+    max-width: 360px;
+    right: 33%;
+    top: 5%;
+  }
+
+  .n3 {
+    font-size: 1.5rem;
+    right: 3%;
+    top: 22%;
+  }
+
+  .n4 {
+    font-size: 1.4rem;
+    right: 5%;
+    bottom: 28%;
+  }
+
+  .n5 {
+    font-size: 1.2rem;
+    max-width: 320px;
+    left: 36%;
+    bottom: 6%;
+  }
+
+  .n6 {
+    font-size: 1.5rem;
+    max-width: 280px;
+    left: 9%;
+    bottom: 25%;
+  }
+
+  .fend p {
+    font-size: 4rem;
+    padding: 4%;
+  }
+}
+
+/* Tablets and Small Laptops */
+@media (max-width: 1024px) {
+  .circle-section {
+    height: 650vh;
+  }
+
+  .character {
+    height: 24rem;
+    left: 20%;
+    top: 30%;
+  }
+
+  .node {
+    font-size: 1.1rem;
+    max-width: 250px;
+    line-height: 1.3;
+  }
+
+  .n1 {
+    font-size: 1.45rem;
+    left: 5%;
+    top: 18%;
+    max-width: 270px;
+  }
+
+  .n2 {
+    font-size: 1.3rem;
+    max-width: 320px;
+    right: 32%;
+    top: 4%;
+  }
+
+  .n3 {
+    font-size: 1.4rem;
+    right: 2%;
+    top: 22%;
+  }
+
+  .n4 {
+    font-size: 1.3rem;
+    right: 5%;
+    bottom: 26%;
+  }
+
+  .n5 {
+    font-size: 1.1rem;
+    max-width: 280px;
+    left: 34%;
+    bottom: 8%;
+  }
+
+  .n6 {
+    font-size: 1.4rem;
+    max-width: 250px;
+    left: 8%;
+    bottom: 30%;
+  }
+
+  .fend p {
+    font-size: 4rem;
+    padding: 5%;
+  }
+}
+
+/* Tablet Portrait */
+@media (max-width: 900px) {
+  .circle-section {
+    height: 600vh;
+  }
+
+  .character {
+    height: 20rem;
+    left: 20%;
+    top: 32%;
+  }
+
+  .node {
+    font-size: 1rem;
+    max-width: 220px;
+    line-height: 1.25;
+  }
+
+  .n1 {
+    font-size: 1.3rem;
+    left: 3%;
+    top: 16%;
+  }
+
+  .n2 {
+    font-size: 1.2rem;
+    max-width: 310px;
+    right: 30%;
+    top: 3%;
+  }
+
+  .n3 {
+    font-size: 1.3rem;
+    right: 3%;
+    top: 20%;
+  }
+
+  .n4 {
+    font-size: 1.3rem;
+    right: 1%;
+    bottom: 30%;
+    max-width: 250px;
+  }
+
+  .n5 {
+    font-size: 1.2rem;
+    max-width: 350px;
+    left: 32%;
+    bottom: 8%;
+  }
+
+  .n6 {
+    font-size: 1.4rem;
+    font-weight: 900;
+    max-width: 220px;
+    left: 7%;
+    bottom: 33%;
+  }
+
+  .fend p {
+    font-size: 3.5rem;
+    padding: 2%;
+  }
+}
+
+/* Mobile Landscape and Small Tablets */
+@media (max-width: 768px) {
+  .circle-section {
+    height: 550vh;
+  }
+
+  .bg {
+    filter: blur(3px);
+  }
+
+  .character {
+    height: 18rem;
+    left: 20%;
+    top: 34%;
+  }
+
+  .node {
+    font-size: 0.95rem;
+    max-width: 200px;
+    line-height: 1.2;
+    padding: 8px;
+    /* background: rgba(0, 0, 0, 0.4); */
+    border-radius: 8px;
+  }
+
+  .n1 {
+    font-size: 1.2rem;
+    left: 5%;
+    top: 25%;
+    max-width: 200px;
+  }
+
+  .n2 {
+    font-size: 1.1rem;
+    max-width: 240px;
+    right: 33%;
+    top: 5%;
+  }
+
+  .n3 {
+    font-size: 1.2rem;
+    right: 3%;
+    top: 26%;
+    max-width: 190px;
+  }
+
+  .n4 {
+    font-size: 1.1rem;
+    right: 5%;
+    bottom: 25%;
+    max-width: 212px;
+  }
+
+  .n5 {
+    font-size: 1rem;
+    max-width: 250px;
+    left: 35%;
+    bottom: 5%;
+  }
+
+  .n6 {
+    font-size: 1.2rem;
+    max-width: 220px;
+    left: 8%;
+    bottom: 26%;
+  }
+
+  .fend p {
+    font-size: 2.5rem;
+    padding: 7%;
+    line-height: 1.3;
+  }
+}
+
+/* Mobile Portrait */
+@media (max-width: 640px) {
+  .circle-section {
+    height: 500vh;
+  }
+
+  .character {
+    height: 16rem;
+    left: 8%;
+    top: 33%;
+  }
+
+  .node {
+    font-size: 0.9rem;
+    max-width: 180px;
+    line-height: 1.2;
+    padding: 10px 8px;
+  }
+
+  .n1 {
+    font-size: 1rem;
+    left: 2%;
+    top: 22%;
+    max-width: 190px;
+  }
+
+  .n2 {
+    font-size: 0.9rem;
+    max-width: 250px;
+    right: 25%;
+    top: 3%;
+  }
+
+  .n3 {
+    font-size: 1rem;
+    right: 1%;
+    top: 22%;
+    max-width: 160px;
+  }
+
+  .n4 {
+    font-size: 1rem;
+    right: 0%;
+    bottom: 25%;
+    max-width: 160px;
+  }
+
+  .n5 {
+    font-size: 0.9rem;
+    max-width: 190px;
+    left: 34%;
+    bottom: 5%;
+  }
+
+  .n6 {
+    font-size: 1.1rem;
+    max-width: 180px;
+    left: 4%;
+    bottom: 30%;
+  }
+
+  .fend {
+    padding: 4%;
+  }
+
+  .fend p {
+    font-size: 2rem;
+    line-height: 1.25;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .circle-section {
+    height: 450vh;
+  }
+
+  .character {
+    height: 14rem;
+    left: 8%;
+    top: 38%;
+  }
+
+  .node {
+    font-size: 0.85rem;
+    max-width: 160px;
+    line-height: 1.15;
+    padding: 10px 7px;
+  }
+
+  .n1 {
+    font-size: 1rem;
+    left: 3%;
+    top: 20%;
+    max-width: 145px;
+  }
+
+  .n2 {
+    font-size: 0.95rem;
+    max-width: 225px;
+    right: 23%;
+    top: 3%;
+  }
+
+  .n3 {
+    font-size: 1rem;
+    right: 1%;
+    top: 21%;
+    max-width: 145px;
+  }
+
+  .n4 {
+    font-size: 0.97rem;
+    right: 3%;
+    bottom: 20%;
+    max-width: 145px;
+  }
+
+  .n5 {
+    font-size: 0.85rem;
+    max-width: 170px;
+    left: 30%;
+    bottom: 6%;
+  }
+
+  .n6 {
+    font-size: 1.1rem;
+    max-width: 160px;
+    left: 5%;
+    bottom: 25%;
+  }
+
+  .fend p {
+    font-size: 2.35rem;
+    line-height: 1.2;
+    padding: 8%;
+  }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 375px) {
+  .circle-section {
+    height: 400vh;
+  }
+
+  .character {
+    height: 12rem;
+    left: 0%;
+    top: 35%;
+  }
+
+  .node {
+    font-size: 0.8rem;
+    max-width: 140px;
+    line-height: 1.1;
+    padding: 8px 6px;
+  }
+
+  .n1 {
+    font-size: 0.75rem;
+    left: 2%;
+    top: 20%;
+    max-width: 130px;
+  }
+
+  .n2 {
+    font-size: 0.7rem;
+    max-width: 200px;
+    right: 20%;
+    top: 1%;
+  }
+
+  .n3 {
+    font-size: 0.75rem;
+    right: 2%;
+    top: 20%;
+    max-width: 130px;
+  }
+
+  .n4 {
+    font-size: 0.7rem;
+    right: 2%;
+    bottom: 23%;
+    max-width: 130px;
+  }
+
+  .n5 {
+    font-size: 0.7rem;
+    max-width: 200px;
+    left: 20%;
+    bottom: 6%;
+  }
+
+  .n6 {
+    font-size: .8rem;
+    max-width: 150px;
+    left: 1%;
+    bottom: 25%;
+  }
+
+  .fend p {
+    font-size: 1.6rem;
+    line-height: 1.15;
+    padding: 1%;
+  }
+}

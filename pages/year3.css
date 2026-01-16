@@ -1,0 +1,117 @@
+/* ================================
+   YEAR 3 — THE FADED ENTRY
+   ================================ */
+
+#year3 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+
+  background-image: url("../public/y3.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  overflow: hidden;
+}
+
+/* ---------- Grain Overlay ---------- */
+#year3::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+
+  background-image: url("/noise.jpg");
+  background-repeat: repeat;
+  background-size: cover;
+
+  opacity: 0.35;
+  mix-blend-mode: overlay;
+}
+
+/* ---------- Center Gate Wrapper ---------- */
+.gate-wrapper {
+  position: relative;
+  z-index: 3;
+
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  place-items: center;
+}
+
+/* ---------- The Gate ---------- */
+.gate {
+  width: clamp(120px, 10.1vw, 200px);
+  height: clamp(200px, 44vh, 600px);
+  margin-left: clamp(-20px, -1.2vw, -10px);
+  margin-top: clamp(-120px, -26vh, -80px);
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
+
+  background: transparent;
+
+  transition:
+    border-color 0.4s ease,
+    box-shadow 0.4s ease,
+    backdrop-filter 0.4s ease;
+
+  cursor: none;
+}
+
+/* ---------- Hover Interaction ---------- */
+.gate:hover {
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0 40px rgba(255, 180, 80, 0.25);
+  backdrop-filter: brightness(1.35);
+}
+
+/* ---------- Responsive Breakpoints ---------- */
+
+/* Tablets and smaller laptops */
+@media (max-width: 1024px) {
+  .gate {
+    width: clamp(200px, 12vw, 180px);
+    height: clamp(200px, 45vh, 500px);
+    margin-left: clamp(-15px, -1vw, -8px);
+    margin-top: clamp(-250px, -29vh, -60px);
+  }
+}
+
+/* Mobile landscape and small tablets */
+@media (max-width: 768px) {
+  .gate {
+    width: clamp(80px, 20vw, 150px);
+    height: clamp(150px, 37vh, 400px);
+    margin-left: 0;
+    margin-top: clamp(-250px, -25vh, -40px);
+  }
+}
+
+/* Mobile portrait */
+@media (max-width: 480px) {
+  .gate {
+    width: clamp(140px, 40vw, 120px);
+    height: clamp(350px, 40vh, 300px);
+    margin-left: 0;
+    margin-top: clamp(-250px, -22vh, -30px);
+  }
+
+  .gate:hover {
+    box-shadow: 0 0 30px rgba(255, 180, 80, 0.2);
+  }
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+  .gate {
+    width: 30vw;
+    height: 35vh;
+    margin-left: -4vw;
+    margin-top: -25vh;
+  }
+}

@@ -1,0 +1,349 @@
+nav {
+    position: relative;
+    backdrop-filter: blur(15px);
+    padding: 5px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 20px rgba(139, 69, 19, 0.2);
+    border-bottom: 3px solid #faeec6e5;
+    background-color: #1b1b1b;
+    z-index: 999;
+
+}
+
+.nav-logo {
+    font-size: 32px;
+    margin-left: -2%;
+    font-weight: 900;
+    font-family: "Dancing script", cursive;
+    color: #e2ba37;
+    text-shadow: 2px 2px 4px rgba(44, 44, 44, 0.8);
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #e2ba37;
+    text-shadow: 2px 2px 4px rgba(44, 44, 44, 0.8);
+    font-size: 18px;
+    font-family: "fredoka";
+    font-weight: 600;
+    padding: 12px 27px;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+    border-radius: 50%;
+}
+
+.nav-links a.active {
+    background: linear-gradient(135deg, #e2ba37 0%, #e2ba37 100%);
+    color: #111111;
+    border-radius: 60% 40% 70% 30% / 40% 50% 60% 50%;
+    box-shadow: 0 8px 20px rgba(139, 69, 19, 0.3),
+        inset 0 2px 8px rgba(255, 255, 255, 0.5);
+    transform: scale(1.1);
+    text-shadow: none;
+    animation: cloudFloat 3s ease-in-out infinite;
+}
+
+.nav-links a:hover:not(.active) {
+    transform: translateY(-2px) scale(1.05);
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.356) 0%,
+            rgba(255, 245, 230, 0.363) 100%);
+    border-radius: 55% 45% 60% 40% / 45% 55% 45% 55%;
+    box-shadow: 0 4px 12px rgba(107, 52, 16, 0.2),
+        inset 0 1px 3px rgba(255, 255, 255, 0.4);
+    animation: hoverCloud 2s ease-in-out infinite;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1000;
+}
+
+.hamburger span {
+    width: 28px;
+    height: 3px;
+    background-color: #e2ba37;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+@keyframes hoverCloud {
+
+    0%,
+    100% {
+        border-radius: 55% 45% 60% 40% / 45% 55% 45% 55%;
+    }
+
+    33% {
+        border-radius: 45% 55% 50% 50% / 55% 45% 55% 45%;
+    }
+
+    66% {
+        border-radius: 60% 40% 55% 45% / 50% 50% 60% 40%;
+    }
+}
+
+@keyframes cloudFloat {
+
+    0%,
+    100% {
+        border-radius: 60% 40% 70% 30% / 40% 50% 60% 50%;
+        transform: scale(1.1) translateY(0);
+    }
+
+    25% {
+        border-radius: 50% 60% 40% 70% / 60% 40% 50% 60%;
+        transform: scale(1.1) translateY(-3px);
+    }
+
+    50% {
+        border-radius: 70% 30% 60% 40% / 50% 60% 40% 50%;
+        transform: scale(1.1) translateY(0);
+    }
+
+    75% {
+        border-radius: 40% 70% 30% 60% / 40% 50% 60% 50%;
+        transform: scale(1.1) translateY(-3px);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    nav {
+        padding: 5px 50px;
+    }
+
+    .nav-logo {
+        font-size: 28px;
+    }
+
+    .nav-links a {
+        font-size: 16px;
+        padding: 10px 22px;
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+}
+
+@media (max-width: 1024px) {
+    nav {
+        padding: 5px 40px;
+    }
+
+    .nav-logo {
+        font-size: 26px;
+    }
+
+    .nav-links a {
+        font-size: 15px;
+        padding: 10px 20px;
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 900px) {
+    nav {
+        padding: 10px 30px;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        right: -100%;
+        height: 100vh;
+        width: 280px;
+        background-color: #1b1b1b;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        transition: right 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        box-shadow: -4px 0 20px rgba(0, 0, 0, 0.3);
+        border-left: 3px solid #faeec6e5;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    /* Top positioned nav - slides from right with display toggle */
+    .top-nav .nav-links {
+        top: 0;
+        display: none;
+    }
+
+    .top-nav .nav-links.active {
+        display: flex;
+        right: 0;
+        animation: slideInRight 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    /* Bottom positioned nav - slides from bottom */
+    .bottom-nav .nav-links {
+        bottom: 0;
+        top: auto;
+    }
+
+    .bottom-nav .nav-links.active {
+        bottom: 0;
+    }
+
+    @keyframes slideInRight {
+        from {
+            right: -100%;
+        }
+
+        to {
+            right: 0;
+        }
+    }
+
+    .nav-links a {
+        font-size: 20px;
+        padding: 15px 35px;
+    }
+
+    .nav-links a.active {
+        transform: scale(1.15);
+    }
+
+    .nav-links a:hover:not(.active) {
+        transform: translateY(-2px) scale(1.1);
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        padding: 10px 25px;
+    }
+
+    .nav-logo {
+        font-size: 24px;
+        margin-left: 0;
+    }
+
+    .nav-links {
+        width: 260px;
+        gap: 25px;
+    }
+
+    .nav-links a {
+        font-size: 18px;
+        padding: 14px 32px;
+    }
+}
+
+@media (max-width: 640px) {
+    nav {
+        padding: 8px 20px;
+    }
+
+    .nav-logo {
+        font-size: 22px;
+    }
+
+    .hamburger span {
+        width: 25px;
+        height: 2.5px;
+    }
+
+    .nav-links {
+        width: 240px;
+        gap: 22px;
+    }
+
+    .nav-links a {
+        font-size: 17px;
+        padding: 13px 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        padding: 8px 15px;
+    }
+
+    .nav-logo {
+        font-size: 20px;
+    }
+
+    .hamburger {
+        padding: 5px;
+    }
+
+    .hamburger span {
+        width: 22px;
+        height: 2.5px;
+        gap: 4px;
+    }
+
+    .nav-links {
+        width: 220px;
+        gap: 20px;
+    }
+
+    .nav-links a {
+        font-size: 16px;
+        padding: 12px 28px;
+    }
+}
+
+@media (max-width: 375px) {
+    nav {
+        padding: 8px 12px;
+    }
+
+    .nav-logo {
+        font-size: 18px;
+    }
+
+    .hamburger span {
+        width: 20px;
+    }
+
+    .nav-links {
+        width: 200px;
+        gap: 18px;
+    }
+
+    .nav-links a {
+        font-size: 15px;
+        padding: 11px 25px;
+    }
+}
